@@ -81,23 +81,80 @@ body {
   box-shadow: -1px 2px 55px -28px rgba(0, 0, 0, 0.75) inset;
 }
 
-.game-board {
+#game-wrapper {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: #20add8;
+  height: 100vh;
+}
+#game-wrapper .game {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 10px rgb(49, 49, 49) solid;
+  border-radius: 10px;
+  background-color: rgb(49, 49, 49);
+  box-shadow: -1px 2px 56px 3px rgba(0, 0, 0, 0.75);
+}
+#game-wrapper .game .game-board {
   width: 500px;
   height: 500px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  background-color: black;
-  gap: 5px;
+  gap: 10px;
+  padding: 5px;
 }
-.game-board .game-tile {
+#game-wrapper .game .game-board .game-tile {
   font-family: "Passion One", sans-serif;
   font-size: 5em;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: #f4de96;
   cursor: pointer;
+  border-radius: 10px;
+}
+#game-wrapper .game .game-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: lightgrey;
+  border-radius: 10px;
+  padding: 5px;
+}
+#game-wrapper .game .game-footer button {
+  font-family: "Roboto Slab", sans-serif;
+  font-size: 1.2em;
+  border: none;
+  background-color: rgb(255, 88, 88);
+  color: white;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+#game-wrapper .game .game-footer .game-status {
+  font-size: 1.2em;
+}
+#game-wrapper .game .back-button {
+  position: fixed;
+  top: 50px;
+  left: 400px;
+  border: none;
+  padding: 10px;
+  border-radius: 50px;
+  cursor: pointer;
+  background-color: #df4acb;
+  color: #f6eda9;
+  transition: 0.3s;
+}
+#game-wrapper .game .back-button svg {
+  width: 50px;
+}
+#game-wrapper .game .back-button:hover {
+  background-color: rgba(223, 74, 203, 0.808);
+  box-shadow: 5px 5px 18px -2px rgba(0, 0, 0, 0.49);
 }
 
 .inactive {

@@ -3,6 +3,7 @@ let winner = '';
 
 const gameStatus = document.querySelector('.game-status');
 const resetButton = document.querySelector('.reset');
+const backButton = document.querySelector('.back-button');
 
 const displayController = (() => {
     const pregameWindow = document.getElementById('pregame-wrapper');
@@ -47,6 +48,7 @@ const gameBoard = (() => {
             oPlayer.name = oPlayerNameInput.value;
 
         }
+        update()
     }
 
     nameSubmitButton.addEventListener('click', () => {
@@ -55,6 +57,7 @@ const gameBoard = (() => {
         });
 
     let turn = xPlayer;
+
     //Update Tiles
     const updateTiles = function() {
         gameTiles.forEach(tile => {
@@ -70,6 +73,7 @@ const gameBoard = (() => {
             update();
         }
     }
+    
 
     const changeTurn = function(){
         if (turn === xPlayer)
@@ -105,17 +109,16 @@ const gameBoard = (() => {
     //Reset
     const reset = function(){
         gameTilesArray = ['','','','','','','','',''];
-        turn = xPlayer;
         gameOver = false;
         winner = '';
-        gameStatus.textContent = '';
         update();
     }
 
-    return {updateTiles, checkWin, checkDraw, reset};
+    return {updateTiles, checkWin, checkDraw, changeTurn, reset, turn, xPlayer, oPlayer};
 })();
 
 
+let isXplayerTurn = true;
 
 function update() {
     gameBoard.updateTiles();
@@ -133,7 +136,20 @@ function update() {
             gameStatus.textContent = "It's a draw!";
         }
         
+    }else{
+        if (isXplayerTurn){
+            gameStatus.textContent = gameBoard.xPlayer.name + "'s turn!";
+        } else{
+            gameStatus.textContent = gameBoard.oPlayer.name + "'s turn!";
+        }
+        isXplayerTurn = !isXplayerTurn;
     }
 }
 
-resetButton.addEventListener('click', () => gameBoard.reset())
+resetButton.addEventListener('click', () =>{
+    gameBoard.reset();
+    gameBoard.changeTurn();
+})
+
+backButton.addEventListener('click', () => displayController.changeWindow());
+    
