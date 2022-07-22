@@ -1,4 +1,86 @@
 @import url("https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@800&display=swap");
+body {
+  margin: 0;
+  font-family: "Roboto Slab", sans-serif;
+}
+
+#pregame-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  height: 100vh;
+  background-color: #20add8;
+}
+#pregame-wrapper .player-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  box-shadow: 0px 0px 29px -3px rgba(0, 0, 0, 0.75);
+  background-color: rgba(246, 160, 235, 0.6117647059);
+}
+#pregame-wrapper .player-wrapper .token {
+  display: flex;
+  justify-content: center;
+  font-size: 10em;
+  color: whitesmoke;
+  background-color: #f8afc3;
+  width: 107%;
+  border-radius: 25px;
+  box-shadow: -1px 2px 56px -14px rgba(0, 0, 0, 0.75);
+}
+#pregame-wrapper .player-wrapper .player-name {
+  display: flex;
+  flex-direction: column;
+  font-size: 2em;
+}
+#pregame-wrapper .player-wrapper .player-name input {
+  font-size: 1em;
+  border-radius: 10px;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 5px;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+#pregame-wrapper .player-wrapper .player-name input:focus-visible {
+  outline: none;
+  border-bottom: 3px solid #120907;
+  box-shadow: 7px 10px 29px -3px rgba(0, 0, 0, 0.5);
+}
+#pregame-wrapper .right-column {
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+#pregame-wrapper .left-column {
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+#pregame-wrapper .middle-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#pregame-wrapper .middle-wrapper .title {
+  font-size: 6em;
+  color: white;
+}
+#pregame-wrapper .middle-wrapper #submit-names {
+  font-family: "Roboto Slab", sans-serif;
+  font-size: 2em;
+  border: none;
+  cursor: pointer;
+  padding: 10px 35px;
+  border-radius: 10px;
+  background-color: #f4de96;
+  transition: 0.3s;
+}
+#pregame-wrapper .middle-wrapper #submit-names:hover {
+  box-shadow: -1px 2px 55px -28px rgba(0, 0, 0, 0.75) inset;
+}
+
 .game-board {
   width: 500px;
   height: 500px;
@@ -16,4 +98,8 @@
   align-items: center;
   background-color: white;
   cursor: pointer;
+}
+
+.inactive {
+  display: none !important;
 }/*# sourceMappingURL=style.css.map */

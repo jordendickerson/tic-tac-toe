@@ -4,10 +4,22 @@ let winner = '';
 const gameStatus = document.querySelector('.game-status');
 const resetButton = document.querySelector('.reset');
 
+const displayController = (() => {
+    const pregameWindow = document.getElementById('pregame-wrapper');
+    const gameWindow = document.getElementById('game-wrapper');
+
+    const changeWindow = function(){
+        pregameWindow.classList.toggle('inactive');
+        gameWindow.classList.toggle('inactive');
+    }
+
+    return {changeWindow};
+})();
+
 //Player
 const player = (playerToken) => {
-    let name = 'player';
     const token = playerToken;
+    let name = playerToken;
 
 
     const changeName = (playerName) => {
@@ -33,15 +45,14 @@ const gameBoard = (() => {
         if (xPlayerNameInput.value && oPlayerNameInput.value){
             xPlayer.name = xPlayerNameInput.value;
             oPlayer.name = oPlayerNameInput.value;
-            console.log(xPlayer.name);
-            console.log(oPlayer.name);
 
-        }else(
-            alert('Please enter both names')
-        )
+        }
     }
 
-    nameSubmitButton.addEventListener('click', () => changePlayerNames());
+    nameSubmitButton.addEventListener('click', () => {
+        changePlayerNames();
+        displayController.changeWindow();
+        });
 
     let turn = xPlayer;
     //Update Tiles

@@ -9,23 +9,40 @@
     <script src="./scripts/bootstrap.js" defer></script>
 </head>
 <body>
-    <div class="player-names">
-        <input type="text" id="x-player-name" placeholder="X Player Name">
-        <input type="text" id="o-player-name" placeholder="O Player Name">
-        <button id="submit-names">Submit Names</button>
+    <div id="pregame-wrapper">
+            <div class="player-wrapper left-column">
+                <span class="token">X</span>
+                <div class="player-name">
+                    <input type="text" id="x-player-name" placeholder="X Player Name">    
+                </div>
+            </div>
+            <div class="middle-wrapper">
+                <div class="title">Tic-Tac-Toe</div>
+                <button id="submit-names">Play!</button>
+            </div>
+            <div class="player-wrapper right-column">
+                <span class="token">O</span>
+                <div class="player-name">
+                    <input type="text" id="o-player-name" placeholder="O Player Name">    
+                </div>
+            </div>
     </div>
-    <div class="game-board">
-        <div class="game-tile" data-tile="0"></div>
-        <div class="game-tile" data-tile="1"></div>
-        <div class="game-tile" data-tile="2"></div>
-        <div class="game-tile" data-tile="3"></div>
-        <div class="game-tile" data-tile="4"></div>
-        <div class="game-tile" data-tile="5"></div>
-        <div class="game-tile" data-tile="6"></div>
-        <div class="game-tile" data-tile="7"></div>
-        <div class="game-tile" data-tile="8"></div>
+    
+    <div id="game-wrapper" class="inactive">
+            <div class="game-board">
+            <div class="game-tile" data-tile="0"></div>
+            <div class="game-tile" data-tile="1"></div>
+            <div class="game-tile" data-tile="2"></div>
+            <div class="game-tile" data-tile="3"></div>
+            <div class="game-tile" data-tile="4"></div>
+            <div class="game-tile" data-tile="5"></div>
+            <div class="game-tile" data-tile="6"></div>
+            <div class="game-tile" data-tile="7"></div>
+            <div class="game-tile" data-tile="8"></div>
+        </div>
+        <button class="reset">Reset</button>
+        <div class="game-status"></div>
     </div>
-    <button class="reset">Reset</button>
-    <div class="game-status"></div>
+    
 </body>
 </html>
