@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap");
+.game-board {
+  width: 500px;
+  height: 500px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  background-color: black;
+  gap: 5px;
+}
+.game-board .game-tile {
+  font-family: "Passion One", sans-serif;
+  font-size: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
