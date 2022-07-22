@@ -1,3 +1,7 @@
+// TODO 
+// SYNC GAME STATUS WITH TURN
+// FIX BUG WHERE RESETTING AFTER A DRAW UNSYNCS THE GAME STATUS
+
 let gameOver = false;
 let winner = '';
 
@@ -80,6 +84,7 @@ const gameBoard = (() => {
             turn = oPlayer;
         else
             turn = xPlayer;
+        console.log(turn.name);
     }
 
     gameTiles.forEach(tile => {
@@ -111,6 +116,7 @@ const gameBoard = (() => {
         gameTilesArray = ['','','','','','','','',''];
         gameOver = false;
         winner = '';
+        isXplayerTurn = !isXplayerTurn
         update();
     }
 
@@ -148,7 +154,6 @@ function update() {
 
 resetButton.addEventListener('click', () =>{
     gameBoard.reset();
-    gameBoard.changeTurn();
 })
 
 backButton.addEventListener('click', () => displayController.changeWindow());
